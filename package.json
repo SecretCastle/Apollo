@@ -20,6 +20,8 @@
         "eslint": "^3.17.0",
         "eslint-loader": "^1.6.3",
         "install": "^0.8.7",
+        "node-sass": "^4.5.3",
+        "sass-loader": "^6.0.6",
         "style-loader": "^0.13.2",
         "webpack": "^2.2.1",
         "webpack-dev-server": "^2.4.1",

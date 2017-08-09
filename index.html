@@ -2,16 +2,34 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>Apollo</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./src/core/sdk/hilo-standalone.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1 , minimum-scale=1">
+    <script src="./src/assets/hilo-standalone.min.js"></script>
 </head>
 
 <body>
     <script src="bundle.js"></script>
     <script>
-        new Apollo()
+        new Apollo({
+            stage: {
+                scale: 1,
+                width: 1000,
+                height: 1000,
+                bgImg: './src/assets/bg.jpg',
+            },
+            sences: [{
+                location: {
+                    x: 607,
+                    y: 245
+                },
+                title: 'China',
+                callbackfns(event, txt) {
+                    alert(txt)
+                },
+                locationImg: './src/assets/location.png'
+            }]
+        })
     </script>
 </body>
 

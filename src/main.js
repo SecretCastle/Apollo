@@ -14,4 +14,5 @@
  */
 
 import Core from './core/core'
+import './assets/core.scss'
 global.Apollo = Core
