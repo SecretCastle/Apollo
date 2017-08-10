@@ -3,7 +3,7 @@ const path = require('path');
 
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './stg/core.js',
     externals: {
         jquery: 'window.$'
     },

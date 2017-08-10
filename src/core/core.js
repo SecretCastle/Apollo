@@ -18,7 +18,6 @@ class Core {
         this.initBackground()
         this.initTicker()
         this.initSence()
-        this.initStageEvent()
     }
 
     divideParam() {
@@ -32,11 +31,7 @@ class Core {
             width: this.stageparam.width,
             height: this.stageparam.height,
             scaleX: this.stageparam.scale,
-            scaleY: this.stageparam.scale,
-            viewport: {
-                width: 200,
-                height: 100
-            }
+            scaleY: this.stageparam.scale
         })
         document.body.appendChild(this.Stage.canvas)
         this.Stage.enableDOMEvent([Hilo.event.POINTER_START, Hilo.event.POINTER_MOVE, Hilo.event.POINTER_END])
@@ -64,35 +59,6 @@ class Core {
         this.senceparam.forEach((ele) => {
             new Sence(ele, this.Stage)
         });
-    }
-    initStageEvent() {
-        let isTouch = false,
-            isMove = false,
-            startX,
-            startY,
-            moveX,
-            moveY
-        this.Stage.on(Hilo.event.POINTER_START, (e) => {
-            isTouch = true
-            startX = e.changedTouches[0].clientX
-            startY = e.changedTouches[0].clientY
-        })
-        this.Stage.on(Hilo.event.POINTER_MOVE, (e) => {
-            if (!isTouch) {
-                return
-            }
-            isMove = true
-            moveX = e.changedTouches[0].clientX - startX
-            moveY = e.changedTouches[0].clientY - startY
-        })
-        this.Stage.on(Hilo.event.POINTER_END, (e) => {
-            if (!isTouch && !isMove) {
-                return
-            }
-            isTouch = false
-            isMove = false
-            console.log(e);
-        })
     }
 }
 

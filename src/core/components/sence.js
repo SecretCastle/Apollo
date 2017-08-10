@@ -5,8 +5,8 @@ export default Hilo.Class.create({
         this.DOM = null
         this.createSenceImg()
         this.createSence()
-        this.animate()
         this.initEvent()
+        this.animate()
     },
     createSenceImg() {
         this.senceImg = new Hilo.Bitmap({
@@ -21,8 +21,8 @@ export default Hilo.Class.create({
     createSence() {
         this.DOM = new Hilo.Container({
             children: [this.senceImg],
-            width: 100,
-            height: 100,
+            width: 0,
+            height: 0,
             x: this.options.location.x,
             y: this.options.location.y
         }).addTo(this.Stage)
